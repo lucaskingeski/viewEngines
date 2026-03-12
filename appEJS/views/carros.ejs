@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title><%= title || 'Carros' %></title>
+    <style>
+        :root { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; background:#f7f7fb; }
+        body { margin: 0; padding: 2rem; }
+        header { margin-bottom: 1.25rem; }
+        h1 { margin: 0 0 .25rem 0; font-size: 1.6rem; color:#0b5; }
+        p.lead { margin:0; color:#444; }
+        .container { max-width: 900px; margin: 1.25rem auto 0; background:#fff; padding:1rem 1.25rem; border-radius:8px; box-shadow:0 6px 18px rgba(10,10,20,0.06); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; margin-top: 1rem; list-style: none; padding: 0; }
+        .card { border: 1px solid #eef; padding: .75rem; border-radius: 8px; background: #fff; }
+        .card h3 { margin: 0 0 .25rem 0; font-size: 1.05rem; color:#036; }
+        .meta { color: #666; font-size: .9rem; margin-bottom: .5rem; }
+        .price { color: #0b5; font-weight: 600; }
+        footer { margin-top: 1rem; color:#666; font-size:.9rem; }
+        a.btn { display:inline-block; padding:.45rem .65rem; background:#036; color:#fff; text-decoration:none; border-radius:6px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><%= title || 'Carros' %></h1>
+        <p class="lead">Uma página simples sobre carros. Aqui você pode listar modelos e informações básicas.</p>
+    </header>
+
+    <main class="container">
+        <% if (typeof carros !== 'undefined' && carros && carros.length) { %>
+            <ul class="grid">
+                <% carros.forEach(function(carro){ %>
+                    <li class="card">
+                        <h3><%= carro.marca %> <%= carro.modelo %></h3>
+                        <div class="meta">Ano: <%= carro.ano %> • Cor: <%= carro.cor %></div>
+                        <% if (carro.km) { %><div class="meta">Km: <%= carro.km %></div><% } %>
+                        <% if (carro.preco) { %><div class="price">Preço: R$ <%= carro.preco %></div><% } %>
+                        <% if (carro.descricao) { %><p style="margin-top:.5rem;"><%= carro.descricao %></p><% } %>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>Nenhum carro cadastrado. Você pode adicionar carros no backend e reenviar a página.</p>
+        <% } %>
+
+        <footer>
+            <a href="/" class="btn">Voltar</a>
+        </footer>
+    </main>
+</body>
+</html>
