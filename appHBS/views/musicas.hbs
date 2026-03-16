@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Estilos Musicais</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f2f2f2;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding:40px;
+}
+
+.card{
+    width:250px;
+    height:200px;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    opacity:0.9;
+}
+
+/* cores diferentes para cada estilo */
+
+.rock{
+    background:#e74c3c;
+}
+
+.rap{
+    background:#34495e;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎵 Estilos Musicais</h1>
+<p>Escolha um estilo para explorar</p>
+</header>
+
+<div class="container">
+
+<a href="musicas/rock" class="card rock">
+🎸 Rock
+</a>
+
+<a href="musicas/rap" class="card rap">
+🎧 Rap
+</a>
+
+</div>
+
+</body>
+</html>

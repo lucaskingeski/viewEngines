@@ -1,0 +1,121 @@
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="UTF-8")
+    title Jogos de Ação
+
+    style.
+      body{
+        font-family: Arial, sans-serif;
+        margin:0;
+        background:#f4f4f4;
+      }
+
+      header{
+        background:#e74c3c;
+        color:white;
+        text-align:center;
+        padding:35px;
+      }
+
+      header h1{
+        margin:0;
+      }
+
+      .descricao{
+        max-width:900px;
+        margin:30px auto;
+        text-align:center;
+        color:#444;
+        font-size:18px;
+      }
+
+      .container{
+        max-width:1100px;
+        margin:0 auto 50px auto;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:25px;
+      }
+
+      .card{
+        width:280px;
+        background:white;
+        border-radius:10px;
+        overflow:hidden;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        transition:0.3s;
+      }
+
+      .card:hover{
+        transform:scale(1.05);
+      }
+
+      .card img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+      }
+
+      .content{
+        padding:15px;
+      }
+
+      .content h3{
+        margin-top:0;
+      }
+
+      .content p{
+        font-size:14px;
+        color:#555;
+      }
+
+      .btn{
+        display:block;
+        width:200px;
+        margin:40px auto;
+        text-align:center;
+        padding:12px;
+        background:#e74c3c;
+        color:white;
+        text-decoration:none;
+        border-radius:6px;
+        font-weight:bold;
+      }
+
+      .btn:hover{
+        background:#c0392b;
+      }
+
+  body
+
+    header
+      h1 🔫 Jogos de Ação
+      p Jogos rápidos, intensos e cheios de adrenalina
+
+    .descricao
+      p
+        Jogos de ação são conhecidos por sua jogabilidade rápida, reflexos rápidos e combate intenso. Eles costumam envolver batalhas, exploração e desafios que exigem habilidade do jogador.
+
+    .container
+
+      .card
+        img(src="https://images.unsplash.com/photo-1511512578047-dfb367046420")
+        .content
+          h3 Call of Duty
+          p Uma das franquias de FPS mais famosas do mundo com combates intensos.
+
+      .card
+        img(src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8")
+        .content
+          h3 Grand Theft Auto V
+          p Um jogo de ação em mundo aberto com missões, combate e muita liberdade.
+
+      .card
+        img(src="https://images.unsplash.com/photo-1542751371-adc38448a05e")
+        .content
+          h3 God of War
+          p A jornada épica de Kratos enfrentando deuses e criaturas mitológicas.
+
+    a.btn(href="/jogos") ⬅ Voltar para jogos

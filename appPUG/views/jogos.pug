@@ -1,0 +1,58 @@
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="UTF-8")
+    title Jogos
+
+    style.
+      body{
+        font-family: Arial, sans-serif;
+        margin:0;
+        background:#f2f2f2;
+      }
+
+      header{
+        background:#34495e;
+        color:white;
+        text-align:center;
+        padding:30px;
+      }
+
+      .container{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:25px;
+        padding:40px;
+      }
+
+      .card{
+        width:250px;
+        height:180px;
+        border-radius:10px;
+        color:white;
+        text-decoration:none;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:22px;
+        font-weight:bold;
+        transition:0.3s;
+      }
+
+      .card:hover{
+        transform:scale(1.05);
+        opacity:0.9;
+      }
+
+      .acao{ background:#e74c3c; }
+      .rpg{ background:#9b59b6; }
+
+  body
+    header
+      h1 🎮 Jogos
+      p Escolha um estilo de jogo
+
+    .container
+      a.card.acao(href="/jogos/acao") 🔫 Ação
+      a.card.rpg(href="/jogos/rpg") 🧙 RPG
