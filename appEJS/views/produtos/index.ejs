@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Produtos</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; margin: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { padding: 8px 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f4f4f4; }
+        .right { text-align: right; }
+        .empty { color: #666; margin-top: 12px; }
+        a.button { display: inline-block; padding: 6px 10px; background:#007bff; color:#fff; text-decoration:none; border-radius:4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Produtos</h1>
+
+        <% if (!produtos || produtos.length === 0) { %>
+            <p class="empty">Nenhum produto encontrado.</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th class="right">Preço (R$)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% produtos.forEach(function(produto) { %>
+                        <tr>
+                            <td><%= produto.id %></td>
+                            <td><%= produto.nome %></td>
+                            <td class="right"><%= produto.preco.toFixed(2) %></td>
+                            <td>
+                                <a class="button" href="/produtos/<%= produto.id %>">Ver</a>
+                                <!-- link de exemplo para edição/remover -->
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>

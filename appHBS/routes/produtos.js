@@ -2,15 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 
-    var produtosLista = [
-        { id: 1, nome: 'Caneta', preco: 2.50 },
-        { id: 2, nome: 'Caderno', preco: 12.00 },
-        { id: 3, nome: 'Mochila', preco: 79.90 }
+    var produtos = [
+        { id: 1, nome: 'Produto A', preco: 10.00 },
+        { id: 2, nome: 'Produto B', preco: 20.00 },
+        { id: 3, nome: 'Produto C', preco: 30.00 },
+        { id: 4, nome: 'Produto D', preco: 40.00 },
+        { id: 5, nome: 'Produto E', preco: 50.00 }
     ];
 
 /* GET produtos page. */
 router.get('/', function(req, res, next) {
-  res.render('produtos', { title: 'Produtos', produtos: produtosLista });
+  res.render('produtos/index', { produtos });
 });
 
 module.exports = router;

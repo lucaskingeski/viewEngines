@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Produtos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; max-width: 800px; }
+        th, td { padding: 8px 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f4f4f4; }
+        .empty { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+
+    {{#if produtos}}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each produtos}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{nome}}</td>
+                        <td>R$ {{preco}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p class="empty">Nenhum produto encontrado.</p>
+    {{/if}}
+
+    <p><a href="/">Voltar</a></p>
+</body>
+</html>

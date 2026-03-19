@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Produtos
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css")
+    body
+        .container.mt-4
+            h1.mb-4 Produtos
+            if produtos && produtos.length
+                table.table.table-striped
+                    thead
+                        tr
+                            th(scope="col") ID
+                            th(scope="col") Nome
+                            th(scope="col" class="text-end") Preço
+                    tbody
+                        each produto in produtos
+                            tr
+                                td= produto.id
+                                td= produto.nome
+                                td.text-end R$ #{produto.preco.toFixed(2)}
+            else
+                p.text-muted Nenhum produto encontrado.
+            a.btn.btn-secondary.mt-3(href="/") Voltar
